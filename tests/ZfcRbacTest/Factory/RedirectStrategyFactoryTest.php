@@ -34,16 +34,16 @@ class RedirectStrategyFactoryTest extends \PHPUnit_Framework_TestCase
                           ->method('getRedirectStrategy')
                           ->will($this->returnValue($redirectStrategyOptions));
 
-        $authenticationServiceMock = $this->getMock('Zend\Authentication\AuthenticationService');
+        $authenticationServiceMock = $this->getMock('Laminas\Authentication\AuthenticationService');
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->getMock('Laminas\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->at(0))
                            ->method('get')
                            ->with('ZfcRbac\Options\ModuleOptions')
                            ->will($this->returnValue($moduleOptionsMock));
         $serviceLocatorMock->expects($this->at(1))
                            ->method('get')
-                           ->with('Zend\Authentication\AuthenticationService')
+                           ->with('Laminas\Authentication\AuthenticationService')
                            ->will($this->returnValue($authenticationServiceMock));
 
         $factory          = new RedirectStrategyFactory();

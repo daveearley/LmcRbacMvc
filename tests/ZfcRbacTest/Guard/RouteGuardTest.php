@@ -18,8 +18,8 @@
 
 namespace ZfcRbacTest\Guard;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\RouteMatch;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Mvc\Router\RouteMatch;
 use ZfcRbac\Guard\ControllerGuard;
 use ZfcRbac\Guard\GuardInterface;
 use ZfcRbac\Guard\RouteGuard;
@@ -38,7 +38,7 @@ class RouteGuardTest extends \PHPUnit_Framework_TestCase
     {
         $guard = new RouteGuard($this->getMock('ZfcRbac\Service\RoleService', [], [], '', false));
 
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
         $eventManager->expects($this->once())
                      ->method('attach')
                      ->with(RouteGuard::EVENT_NAME);
@@ -394,8 +394,8 @@ class RouteGuardTest extends \PHPUnit_Framework_TestCase
         $event      = new MvcEvent();
         $routeMatch = new RouteMatch([]);
 
-        $application  = $this->getMock('Zend\Mvc\Application', [], [], '', false);
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $application  = $this->getMock('Laminas\Mvc\Application', [], [], '', false);
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
 
         $application->expects($this->never())
                     ->method('getEventManager')
@@ -431,8 +431,8 @@ class RouteGuardTest extends \PHPUnit_Framework_TestCase
         $event      = new MvcEvent();
         $routeMatch = new RouteMatch([]);
 
-        $application  = $this->getMock('Zend\Mvc\Application', [], [], '', false);
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $application  = $this->getMock('Laminas\Mvc\Application', [], [], '', false);
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
 
         $application->expects($this->once())
                     ->method('getEventManager')

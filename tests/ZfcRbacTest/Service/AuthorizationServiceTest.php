@@ -25,7 +25,7 @@ use ZfcRbac\Service\AuthorizationService;
 use ZfcRbac\Service\RoleService;
 use ZfcRbacTest\Asset\SimpleAssertion;
 use ZfcRbac\Assertion\AssertionPluginManager;
-use Zend\ServiceManager\Config;
+use Laminas\ServiceManager\Config;
 
 /**
  * @covers \ZfcRbac\Service\AuthorizationService

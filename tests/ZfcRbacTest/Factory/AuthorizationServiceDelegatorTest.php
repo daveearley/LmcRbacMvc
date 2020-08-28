@@ -32,7 +32,7 @@ class AuthorizationServiceDelegatorTest extends \PHPUnit_Framework_TestCase
     {
         $authServiceClassName = 'ZfcRbac\Service\AuthorizationService';
         $delegator            = new AuthorizationServiceDelegatorFactory();
-        $serviceLocator       = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator       = $this->getMock('Laminas\ServiceManager\ServiceLocatorInterface');
         $authorizationService = $this->getMock('ZfcRbac\Service\AuthorizationService', [], [], '', false);
 
         $callback = function () {

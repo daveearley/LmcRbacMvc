@@ -18,8 +18,8 @@
 
 namespace ZfcRbac\Factory;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZfcRbac\View\Strategy\RedirectStrategy;
 
 /**
@@ -37,8 +37,8 @@ class RedirectStrategyFactory implements FactoryInterface
     {
         /* @var \ZfcRbac\Options\ModuleOptions $moduleOptions */
         $moduleOptions = $serviceLocator->get('ZfcRbac\Options\ModuleOptions');
-        /** @var \Zend\Authentication\AuthenticationService $authenticationService */
-        $authenticationService = $serviceLocator->get('Zend\Authentication\AuthenticationService');
+        /** @var \Laminas\Authentication\AuthenticationService $authenticationService */
+        $authenticationService = $serviceLocator->get('Laminas\Authentication\AuthenticationService');
 
         return new RedirectStrategy($moduleOptions->getRedirectStrategy(), $authenticationService);
     }

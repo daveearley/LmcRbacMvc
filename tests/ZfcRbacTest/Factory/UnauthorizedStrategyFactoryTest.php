@@ -34,7 +34,7 @@ class UnauthorizedStrategyFactoryTest extends \PHPUnit_Framework_TestCase
                           ->method('getUnauthorizedStrategy')
                           ->will($this->returnValue($unauthorizedStrategyOptions));
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->getMock('Laminas\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->once())
                            ->method('get')
                            ->with('ZfcRbac\Options\ModuleOptions')

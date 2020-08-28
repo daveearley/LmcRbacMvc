@@ -18,7 +18,7 @@
 
 namespace ZfcRbac\Identity;
 
-use Zend\Authentication\AuthenticationServiceInterface;
+use Laminas\Authentication\AuthenticationServiceInterface;
 use ZfcRbac\Exception;
 
 /**

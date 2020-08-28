@@ -17,8 +17,8 @@
  */
 namespace ZfcRbacTest\Guard;
 
-use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\RouteMatch;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Mvc\Router\RouteMatch;
 use ZfcRbac\Guard\ControllerGuard;
 use ZfcRbac\Guard\GuardInterface;
 use ZfcRbac\Guard\RouteGuard;
@@ -32,7 +32,7 @@ class RoutePermissionsGuardTest extends \PHPUnit_Framework_TestCase
 {
     public function testAttachToRightEvent()
     {
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
         $eventManager->expects($this->once())
             ->method('attach')
             ->with(RouteGuard::EVENT_NAME);
@@ -378,9 +378,9 @@ class RoutePermissionsGuardTest extends \PHPUnit_Framework_TestCase
 
     public function testProperlyFillEventOnAuthorization()
     {
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
 
-        $application = $this->getMock('Zend\Mvc\Application', [], [], '', false);
+        $application = $this->getMock('Laminas\Mvc\Application', [], [], '', false);
         $application->expects($this->never())
             ->method('getEventManager')
             ->will($this->returnValue($eventManager));
@@ -409,12 +409,12 @@ class RoutePermissionsGuardTest extends \PHPUnit_Framework_TestCase
 
     public function testProperlySetUnauthorizedAndTriggerEventOnUnauthorization()
     {
-        $eventManager = $this->getMock('Zend\EventManager\EventManagerInterface');
+        $eventManager = $this->getMock('Laminas\EventManager\EventManagerInterface');
         $eventManager->expects($this->once())
             ->method('trigger')
             ->with(MvcEvent::EVENT_DISPATCH_ERROR);
 
-        $application = $this->getMock('Zend\Mvc\Application', [], [], '', false);
+        $application = $this->getMock('Laminas\Mvc\Application', [], [], '', false);
         $application->expects($this->once())
             ->method('getEventManager')
             ->will($this->returnValue($eventManager));

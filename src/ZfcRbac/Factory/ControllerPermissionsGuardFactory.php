@@ -18,9 +18,9 @@
 
 namespace ZfcRbac\Factory;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\MutableCreationOptionsInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\MutableCreationOptionsInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZfcRbac\Guard\ControllerPermissionsGuard;
 use ZfcRbac\Guard\RouteGuard;
 
@@ -46,7 +46,7 @@ class ControllerPermissionsGuardFactory implements FactoryInterface, MutableCrea
     }
 
     /**
-     * @param \Zend\ServiceManager\AbstractPluginManager|ServiceLocatorInterface $serviceLocator
+     * @param \Laminas\ServiceManager\AbstractPluginManager|ServiceLocatorInterface $serviceLocator
      * @return RouteGuard
      */
     public function createService(ServiceLocatorInterface $serviceLocator)

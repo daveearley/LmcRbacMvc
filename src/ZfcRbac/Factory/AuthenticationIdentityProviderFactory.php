@@ -18,8 +18,8 @@
 
 namespace ZfcRbac\Factory;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZfcRbac\Identity\AuthenticationIdentityProvider;
 
 /**
@@ -36,8 +36,8 @@ class AuthenticationIdentityProviderFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        /* @var \Zend\Authentication\AuthenticationService $authenticationProvider */
-        $authenticationProvider = $serviceLocator->get('Zend\Authentication\AuthenticationService');
+        /* @var \Laminas\Authentication\AuthenticationService $authenticationProvider */
+        $authenticationProvider = $serviceLocator->get('Laminas\Authentication\AuthenticationService');
 
         return new AuthenticationIdentityProvider($authenticationProvider);
     }
