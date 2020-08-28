@@ -19,44 +19,44 @@
 return [
     'service_manager' => [
         'invokables' => [
-            'ZfcRbac\Collector\RbacCollector' => 'ZfcRbac\Collector\RbacCollector',
+            'LmcRbacMvc\Collector\RbacCollector' => 'LmcRbacMvc\Collector\RbacCollector',
         ],
 
         'factories' => [
             /* Factories that do not map to a class */
-            'ZfcRbac\Guards' => 'ZfcRbac\Factory\GuardsFactory',
+            'LmcRbacMvc\Guards' => 'LmcRbacMvc\Factory\GuardsFactory',
 
             /* Factories that map to a class */
-            'Rbac\Rbac'                                       => 'ZfcRbac\Factory\RbacFactory',
-            'ZfcRbac\Assertion\AssertionPluginManager'        => 'ZfcRbac\Factory\AssertionPluginManagerFactory',
-            'ZfcRbac\Guard\GuardPluginManager'                => 'ZfcRbac\Factory\GuardPluginManagerFactory',
-            'ZfcRbac\Identity\AuthenticationIdentityProvider' => 'ZfcRbac\Factory\AuthenticationIdentityProviderFactory',
-            'ZfcRbac\Options\ModuleOptions'                   => 'ZfcRbac\Factory\ModuleOptionsFactory',
-            'ZfcRbac\Role\RoleProviderPluginManager'          => 'ZfcRbac\Factory\RoleProviderPluginManagerFactory',
-            'ZfcRbac\Service\AuthorizationService'            => 'ZfcRbac\Factory\AuthorizationServiceFactory',
-            'ZfcRbac\Service\RoleService'                     => 'ZfcRbac\Factory\RoleServiceFactory',
-            'ZfcRbac\View\Strategy\RedirectStrategy'          => 'ZfcRbac\Factory\RedirectStrategyFactory',
-            'ZfcRbac\View\Strategy\UnauthorizedStrategy'      => 'ZfcRbac\Factory\UnauthorizedStrategyFactory',
+            'Rbac\Rbac'                                       => 'LmcRbacMvc\Factory\RbacFactory',
+            'LmcRbacMvc\Assertion\AssertionPluginManager'        => 'LmcRbacMvc\Factory\AssertionPluginManagerFactory',
+            'LmcRbacMvc\Guard\GuardPluginManager'                => 'LmcRbacMvc\Factory\GuardPluginManagerFactory',
+            'LmcRbacMvc\Identity\AuthenticationIdentityProvider' => 'LmcRbacMvc\Factory\AuthenticationIdentityProviderFactory',
+            'LmcRbacMvc\Options\ModuleOptions'                   => 'LmcRbacMvc\Factory\ModuleOptionsFactory',
+            'LmcRbacMvc\Role\RoleProviderPluginManager'          => 'LmcRbacMvc\Factory\RoleProviderPluginManagerFactory',
+            'LmcRbacMvc\Service\AuthorizationService'            => 'LmcRbacMvc\Factory\AuthorizationServiceFactory',
+            'LmcRbacMvc\Service\RoleService'                     => 'LmcRbacMvc\Factory\RoleServiceFactory',
+            'LmcRbacMvc\View\Strategy\RedirectStrategy'          => 'LmcRbacMvc\Factory\RedirectStrategyFactory',
+            'LmcRbacMvc\View\Strategy\UnauthorizedStrategy'      => 'LmcRbacMvc\Factory\UnauthorizedStrategyFactory',
         ],
     ],
 
     'view_helpers' => [
         'factories' => [
-            'ZfcRbac\View\Helper\IsGranted' => 'ZfcRbac\Factory\IsGrantedViewHelperFactory',
-            'ZfcRbac\View\Helper\HasRole'   => 'ZfcRbac\Factory\HasRoleViewHelperFactory'
+            'LmcRbacMvc\View\Helper\IsGranted' => 'LmcRbacMvc\Factory\IsGrantedViewHelperFactory',
+            'LmcRbacMvc\View\Helper\HasRole'   => 'LmcRbacMvc\Factory\HasRoleViewHelperFactory'
         ],
         'aliases' => [
-            'isGranted' => 'ZfcRbac\View\Helper\IsGranted',
-            'hasRole'   => 'ZfcRbac\View\Helper\HasRole'
+            'isGranted' => 'LmcRbacMvc\View\Helper\IsGranted',
+            'hasRole'   => 'LmcRbacMvc\View\Helper\HasRole'
         ]
     ],
 
     'controller_plugins' => [
         'factories' => [
-            'ZfcRbac\Mvc\Controller\Plugin\IsGranted' => 'ZfcRbac\Factory\IsGrantedPluginFactory'
+            'LmcRbacMvc\Mvc\Controller\Plugin\IsGranted' => 'LmcRbacMvc\Factory\IsGrantedPluginFactory'
         ],
         'aliases' => [
-            'isGranted' => 'ZfcRbac\Mvc\Controller\Plugin\IsGranted'
+            'isGranted' => 'LmcRbacMvc\Mvc\Controller\Plugin\IsGranted'
         ]
     ],
 
@@ -70,7 +70,7 @@ return [
     'laminas-developer-tools' => [
         'profiler' => [
             'collectors' => [
-                'zfc_rbac' => 'ZfcRbac\Collector\RbacCollector',
+                'zfc_rbac' => 'LmcRbacMvc\Collector\RbacCollector',
             ],
         ],
         'toolbar' => [

@@ -99,7 +99,7 @@
     },
     "autoload": {
         "psr-0": {
-            "ZfcRbac\\": "src/"
+            "LmcRbacMvc\\": "src/"
         }
     },
     "extra": {

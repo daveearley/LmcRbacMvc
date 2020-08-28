@@ -16,7 +16,7 @@
  * and is licensed under the MIT license.
  */
 
-use ZfcRbacTest\Util\ServiceManagerFactory;
+use LmcRbacMvcTest\Util\ServiceManagerFactory;
 
 ini_set('error_reporting', E_ALL);
 
@@ -37,7 +37,7 @@ if (! isset($loader)) {
     throw new RuntimeException('vendor/autoload.php could not be found. Did you install via composer?');
 }
 
-$loader->add('ZfcRbacTest\\', __DIR__);
+$loader->add('LmcRbacMvcTest\\', __DIR__);
 
 $configFiles = [
     __DIR__ . '/TestConfiguration.php',
